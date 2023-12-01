@@ -6,8 +6,11 @@ layout: default
   <div class="container">
     <div class="row justify-content-between">
       <div class="col-lg-5">
-        
-         <script src="https://utteranc.es/client.js"
+        <h2 class="mb-4">{{ page.title }}</h2>
+        <div class="content mb-4">{{ page.content }}</div>
+        <form method="POST" action="{{ site.data.parameters.contact_form_action }}" class="row">
+          <div class="col-12">
+                   <script src="https://utteranc.es/client.js"
           repo="qinghongjiao/guestbook"
           issue-term="pathname"
           label="Comments"
@@ -15,10 +18,18 @@ layout: default
           crossorigin="anonymous"
           async>
   </script>
-        
+            
+          </div>
+        </form>
+      </div>
       <div class="col-lg-6 text-md-right">
         <img class="img-fluid" src="{{ page.image | relative_url }}">
       </div>
     </div>
   </div>
 </section>
+
+        
+
+        
+   
