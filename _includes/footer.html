@@ -1,5 +1,48 @@
 <!-- footer -->
 <footer class="py-4 bg-light border-top">
+   <!-- darkmode暗黑模式开始left 左 右 right 底部 bottom-->
+<script src="https://cdn.bootcss.com/Darkmode.js/1.5.7/darkmode-js.js"></script>
+<!-- darkmode js bootcss cdn或者jsdelivr cdn -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script> -->
+<script>
+ var options = {
+        bottom: "32px",                 // default: '32px'  底部
+        right: "32px",                  // default: '32px' 右
+        left: "unset",                  // default: 'unset' 左
+        time: "0.5s",                   // default: '0.3s' 过渡时间
+        mixColor: "#fff",               // default: '#fff' 混合层背景色
+        backgroundColor: "#fff",        // default: '#fff' 创建的背景层背景色
+        buttonColorDark: "#262728",     // default: '#100f2c' 亮色状态下的按钮颜色
+        buttonColorLight: "#fff",       // default: '#fff' 暗色状态下的按钮色
+        saveInCookies: true,            // default: true, 是否存在cookie 默认 local storage
+        label: "🌓",                    // default: '' 按钮中的内容
+        autoMatchOsTheme: true,         // default: true 跟随系统设置
+    };
+    let darkmode = new Darkmode(options);
+    darkmode.showWidget();
+ 
+    $("document").ready(function () {
+        if (darkmode.isActivated()) {
+            document.getElementById("light-mode").style.display = "none";
+            document.getElementById("dark-mode").style.display = "flex";
+        } else {
+            document.getElementById("light-mode").style.display = "flex";
+            document.getElementById("dark-mode").style.display = "none";
+        }
+    });
+ 
+    $(".darkmode-toggle").click(function () {
+        if (darkmode.isActivated()) {
+            document.getElementById("light-mode").style.display = "none";
+            document.getElementById("dark-mode").style.display = "flex";
+        } else {
+            document.getElementById("light-mode").style.display = "flex";
+            document.getElementById("dark-mode").style.display = "none";
+        }
+    });
+</script>
+     <!-- darkmode暗黑模式结束 -->
+  
   <div class="container">
     <div class="row justify-content-between align-items-center">
       <div class="col-lg-4 text-center text-lg-left mb-4 mb-lg-0">
